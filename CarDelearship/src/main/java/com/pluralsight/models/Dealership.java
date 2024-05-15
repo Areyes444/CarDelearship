@@ -19,43 +19,9 @@ public class Dealership
         this.address = address;
         this.phone = phone;
         this.vehicles = new ArrayList<>();
-        loadVehicleInformation();
     }
 
 
-    private void loadVehicleInformation()
-    {
-
-        File file = new File("files/inventory.csv");
-        try(Scanner fileScanner = new Scanner(file))
-        {
-            fileScanner.nextLine();
-
-            while(fileScanner.hasNextLine())
-            {
-                String line = fileScanner.nextLine();
-                String[] tokens = line.split("\\|");
-
-                int vin = Integer.parseInt(tokens[0]);
-                int year = Integer.parseInt(tokens[1]);
-                String make = tokens[2];
-                String model = tokens[3];
-                String vehicleType = tokens[4];
-                String color = tokens[5];
-                int odometer = Integer.parseInt(tokens[6]);
-                double price = Double.parseDouble(tokens[7]);
-
-                Vehicle vehicle = new Vehicle(vin,year,make,model,vehicleType,color,odometer,price);
-                vehicles.add(vehicle);
-
-            }
-        }
-        catch (FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
-
-    }
 
     public void addVehicle(Vehicle vehicle)
     {
