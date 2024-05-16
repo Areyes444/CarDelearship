@@ -12,7 +12,7 @@ public class UserInterface
     static final Scanner userInput = new Scanner(System.in);
     public Dealership dealership;
     public DealershipFileManager fileManager;
-    public ArrayList<Vehicle> vehicle;
+    public ArrayList<Vehicle> vehiclelist;
     public Vehicle vehicle;
 
     public int display()
@@ -100,6 +100,8 @@ public class UserInterface
            System.out.println("Sorry, no vehicles found.");
        }else{
            System.out.println("Here is a list of all the vehicles: ");
+           System.out.println(String.format("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s ", "Vin", "Year", "Make", "Model", "VehicleType", "Color", "Odometer", "Price"));
+           System.out.println("-".repeat(100));
            for(Vehicle vehicle: vehicles)
            {
                System.out.println(vehicle);
@@ -109,7 +111,7 @@ public class UserInterface
    
    public void processGetAllVehiclesRequest()
    {
-       vehicle = dealership.getAllVehicles();
-       displayVehicles(vehicle);
+       vehiclelist = dealership.getAllVehicles();
+       displayVehicles(vehiclelist);
    }
 }

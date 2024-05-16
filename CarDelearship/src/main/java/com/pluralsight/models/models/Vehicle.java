@@ -12,6 +12,7 @@ public class Vehicle
     private double price;
 
 
+
     public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price)
     {
         this.vin = vin;
@@ -22,6 +23,7 @@ public class Vehicle
         this.color = color;
         this.odometer = odometer;
         this.price = price;
+
     }
 
     public int getVin()
@@ -102,6 +104,11 @@ public class Vehicle
     public void setPrice(double price)
     {
         this.price = price;
+    }
+
+    public String toString() {
+        return String.format("%-10d %-10d %-10s %-10s %-10s %-10s %-10d %.2f",
+                vin, year, make, model, vehicleType, color, odometer, price);
     }
 
 

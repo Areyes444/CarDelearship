@@ -18,7 +18,7 @@ public class DealershipFileManager
     {
         Dealership dealership = null;
 
-        try(Scanner fileScanner = new Scanner(new File("inventory.csv")))
+        try(Scanner fileScanner = new Scanner(new File("files/inventory.csv")))
         {
             String dealerline = fileScanner.nextLine();
             String[] parts = dealerline.split("\\|");

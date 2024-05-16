@@ -1,9 +1,12 @@
 package com.pluralsight;
 
+import com.pluralsight.models.models.UI.UserInterface;
+
 public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println();
+        UserInterface ui = new UserInterface();
+        ui.display();
     }
 }
