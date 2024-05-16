@@ -1,12 +1,18 @@
-package com.pluralsight.models;
+package com.pluralsight.models.models.services;
+
+import com.pluralsight.models.models.Dealership;
+import com.pluralsight.models.models.Vehicle;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DealershipFileManager
 {
+    public Dealership getDealership()
+    {
+        return loadDealership();
+    }
 
     private Dealership loadDealership()
     {

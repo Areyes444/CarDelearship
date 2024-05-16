@@ -1,9 +1,6 @@
-package com.pluralsight.models;
+package com.pluralsight.models.models;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class Dealership
